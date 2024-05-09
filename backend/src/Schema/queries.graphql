@@ -1,0 +1,35 @@
+query GetAllProducts {
+  allProducts {
+    id
+    name
+    price
+    image
+  }
+}
+
+query GetProductsByCategory($categoryId: ID!) {
+  productsByCategory(categoryId: $categoryId) {
+    id
+    name
+    price
+    image
+  }
+}
+
+query GetProductById($productId: ID!) {
+  productById(productId: $productId) {
+    id
+    name
+    price
+    image
+    category {
+      id
+      name
+    }
+    attributes {
+      id
+      name
+      value
+    }
+  }
+}
